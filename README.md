@@ -10,7 +10,7 @@ The leaderboard website displays scores submitted by different players. It also 
 
 ## Live Demo
 
-<a href="">Live version</a>
+<a href="https://enkog.github.io/Leaderboard/">Live version</a>
 
 ## Setup
 
