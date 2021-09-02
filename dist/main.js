@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\n  margin: 0;\\n  padding: 0;\\n  box-sizing: border-box;\\n}\\n\\nbody {\\n  min-height: 100vh;\\n}\\n\\n.scores-listing li:nth-child(even) {\\n  background-color: rgb(184, 180, 180);\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://Leaderboard/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\r\\n  margin: 0;\\r\\n  padding: 0;\\r\\n  box-sizing: border-box;\\r\\n}\\r\\n\\r\\nbody {\\r\\n  min-height: 100vh;\\r\\n}\\r\\n\\r\\n.scores-listing li:nth-child(even) {\\r\\n  background-color: rgb(184, 180, 180);\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://Leaderboard/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -100,13 +100,33 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
 
 /***/ }),
 
+/***/ "./src/addScore.js":
+/*!*************************!*\
+  !*** ./src/addScore.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst addScore = async (data) => {\n  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/L9jIzDslBRHy6SDanTPc/scores';\n\n  const response = await fetch(url, {\n    method: 'POST',\n    mode: 'cors',\n    cache: 'no-cache',\n    credentials: 'same-origin',\n    redirect: 'follow',\n    referrerPolicy: 'no-referrer',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify(data),\n  });\n\n  return response.json();\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addScore);\n\n\n//# sourceURL=webpack://Leaderboard/./src/addScore.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst scoresArr = [\n  { name: 'Nkiruka', score: 50 },\n  { name: 'John', score: 150 },\n  { name: 'Benjamin', score: 250 },\n  { name: 'Daniel', score: 350 },\n  { name: 'Seun', score: 60 },\n  { name: 'James', score: 30 },\n  { name: 'Arthur', score: 70 },\n  { name: 'Daniella', score: 400 },\n];\n\nconst renderList = (arr) => {\n  const ul = document.querySelector('.scores-listing');\n\n  arr.forEach((e) => {\n    const li = document.createElement('li');\n    li.className = 'list-item p-2';\n    li.textContent = `${e.name}: ${e.score}`;\n    ul.appendChild(li);\n  });\n};\n\nrenderList(scoresArr);\n\n//# sourceURL=webpack://Leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _addScore_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addScore.js */ \"./src/addScore.js\");\n/* harmony import */ var _renderList_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderList.js */ \"./src/renderList.js\");\n\n\n\n\nconst submitBtn = document.getElementById('submit');\nconst refreshBtn = document.getElementById('refresh');\nconst ul = document.querySelector('ul');\n\nsubmitBtn.addEventListener('click', () => {\n  const name = document.getElementById('name').value;\n  const score = document.getElementById('score').value;\n  const data = { user: `${name}`, score: parseInt(`${score}`, 10) };\n  (0,_addScore_js__WEBPACK_IMPORTED_MODULE_1__.default)(data);\n});\n\nrefreshBtn.addEventListener('click', () => {\n  ul.innerHTML = '';\n  (0,_renderList_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n});\n\nwindow.onload = () => {\n  (0,_renderList_js__WEBPACK_IMPORTED_MODULE_2__.default)();\n};\n\n//# sourceURL=webpack://Leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/renderList.js":
+/*!***************************!*\
+  !*** ./src/renderList.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst renderList = async () => {\n  const ul = document.querySelector('.scores-listing');\n  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/L9jIzDslBRHy6SDanTPc/scores';\n  const response = await fetch(url);\n  const scores = await response.json();\n\n  scores.result.forEach((e) => {\n    const li = document.createElement('li');\n    li.className = 'list-item p-2';\n    li.textContent = `${e.user}: ${e.score}`;\n    ul.appendChild(li);\n  });\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderList);\n\n\n//# sourceURL=webpack://Leaderboard/./src/renderList.js?");
 
 /***/ })
 

@@ -1,25 +1,23 @@
 import './style.css';
+import addScore from './addScore.js';
+import renderList from './renderList.js';
 
-const scoresArr = [
-  { name: 'Nkiruka', score: 50 },
-  { name: 'John', score: 150 },
-  { name: 'Benjamin', score: 250 },
-  { name: 'Daniel', score: 350 },
-  { name: 'Seun', score: 60 },
-  { name: 'James', score: 30 },
-  { name: 'Arthur', score: 70 },
-  { name: 'Daniella', score: 400 },
-];
+const submitBtn = document.getElementById('submit');
+const refreshBtn = document.getElementById('refresh');
+const ul = document.querySelector('ul');
 
-const renderList = (arr) => {
-  const ul = document.querySelector('.scores-listing');
+submitBtn.addEventListener('click', () => {
+  const name = document.getElementById('name').value;
+  const score = document.getElementById('score').value;
+  const data = { user: `${name}`, score: parseInt(`${score}`, 10) };
+  addScore(data);
+});
 
-  arr.forEach((e) => {
-    const li = document.createElement('li');
-    li.className = 'list-item p-2';
-    li.textContent = `${e.name}: ${e.score}`;
-    ul.appendChild(li);
-  });
+refreshBtn.addEventListener('click', () => {
+  ul.innerHTML = '';
+  renderList();
+});
+
+window.onload = () => {
+  renderList();
 };
-
-renderList(scoresArr);
