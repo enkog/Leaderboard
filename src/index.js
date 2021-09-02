@@ -4,7 +4,6 @@ import renderList from './renderList.js';
 
 const submitBtn = document.getElementById('submit');
 const refreshBtn = document.getElementById('refresh');
-
 const ul = document.querySelector('ul');
 
 submitBtn.addEventListener('click', () => {
