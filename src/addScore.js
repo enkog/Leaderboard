@@ -16,3 +16,4 @@ async function addScore(data) {
 
   return response.json();
 }
+export default addScore;
