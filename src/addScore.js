@@ -1,5 +1,5 @@
 const addScore = async (data) => {
-  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/L9jIzDslBRHy6SDanTPc/scores';
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/J2wkBYJ3V6UdPezPYpkl/scores';
 
   const response = await fetch(url, {
     method: 'POST',
