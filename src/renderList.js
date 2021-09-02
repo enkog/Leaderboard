@@ -11,3 +11,4 @@ async function renderList() {
     ul.appendChild(li);
   });
 }
+export default renderList;
