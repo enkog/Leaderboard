@@ -3,15 +3,13 @@
 The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
 The API used for this project was gotten from <a href="https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3">Leaderboard API documentation</a>
 
+![Screenshot](./img/screenshot.PNG)
+
 ## Built With 
 
 - JavaScript
 - HTML
 - Bootstrap
-
-## Live Demo
-
-<a href="https://enkog.github.io/Leaderboard/">Live version</a>
 
 ## Setup
 
