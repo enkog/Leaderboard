@@ -5,6 +5,10 @@ The API used for this project was gotten from <a href="https://www.notion.so/Lea
 
 ![Screenshot](./img/screenshot.PNG)
 
+## Live Demo
+
+<a href="https://enkog.github.io/Leaderboard/">Live version</a>
+
 ## Built With 
 
 - JavaScript
