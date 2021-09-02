@@ -1,4 +1,4 @@
-async function renderList() {
+const renderList = async () => {
   const ul = document.querySelector('.scores-listing');
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/L9jIzDslBRHy6SDanTPc/scores';
   const response = await fetch(url);
@@ -10,5 +10,5 @@ async function renderList() {
     li.textContent = `${e.user}: ${e.score}`;
     ul.appendChild(li);
   });
-}
+};
 export default renderList;
