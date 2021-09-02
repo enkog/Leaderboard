@@ -3,6 +3,8 @@ import renderList from './renderList.js';
 import addScore from './addScore.js';
 
 const submitBtn = document.getElementById('submit');
+const refreshBtn = document.getElementById('refresh');
+const ul = document.querySelector('ul');
 
 submitBtn.addEventListener('click', () => {
   const name = document.getElementById('name').value;
@@ -10,3 +12,12 @@ submitBtn.addEventListener('click', () => {
   const data = { user: `${name}`, score: parseInt(`${score}`, 10) };
   addScore(data);
 });
+
+refreshBtn.addEventListener('click', () => {
+  ul.innerHTML = '';
+  renderList();
+});
+
+window.onload = () => {
+  renderList();
+};
